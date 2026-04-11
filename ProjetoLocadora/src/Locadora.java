@@ -3,10 +3,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Locadora {
-    List<Objects> frota;
+    private List frota;
 
     public Locadora(){
-        ArrayList<Objects> frota = new ArrayList<>();
+        this.frota = new ArrayList();
+
     }
 
     public void adicionarVeiculo(Veiculo veiculo){
