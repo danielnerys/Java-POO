@@ -16,7 +16,7 @@ public class Moto extends Veiculo{
 
     @Override
     public String exibirDados(){
-        return getMarca() + " " + getModelo() + " (" + getAno() + ")";
+        return getMarca() + " " + getModelo() + " (" + getAno() + ")" + cilindradas;
     }
 
 }
