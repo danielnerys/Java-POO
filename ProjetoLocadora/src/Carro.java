@@ -1,8 +1,9 @@
 public class Carro extends Veiculo {
     private int qtdPortas;
-    public Carro(String marca, String modelo, int ano, String placa, double precoBase, int qtdPortas) {
-        super(marca, modelo, ano, placa, precoBase);
+    public Carro(String marca, String modelo, int ano, String placa, double precoBase, int qtdPortas, boolean status) {
+        super(marca, modelo, ano, placa, precoBase, status);
         this.qtdPortas = qtdPortas;
+
     }
     @Override
     public double calcularDiaria(){
@@ -18,7 +19,8 @@ public class Carro extends Veiculo {
 
 
     public String exibirDados(){
-        return getMarca() + " " + getModelo() + " (" + getAno() + ") " + getQtdPortas();
+        String resultado = (getStatus()) ? "disponivel": "indisponivel";
+        return getMarca() + " " + getModelo() + " (" + getAno() + ") " + getQtdPortas() + " " + resultado;
 
     }
 
