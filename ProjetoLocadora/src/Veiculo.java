@@ -55,7 +55,7 @@ abstract class Veiculo {
         return precoBase;
     }
 
-    public boolean getStatus(){ return status;};
+    public boolean getStatus(){ return  status;};
 
     public void setPrecoBase(double precoBase){
         if(precoBase < 0){

@@ -4,10 +4,10 @@ import java.util.Objects;
 
 public class Locadora {
     private List<Veiculo> frota;
+    private String dados;
 
     public Locadora(){
         this.frota = new ArrayList<>();
-
     }
 
     public void adicionarVeiculo(Veiculo veiculo){
@@ -15,7 +15,7 @@ public class Locadora {
     }
 
     public void listarVeiculos(){
-        System.out.print("\n==================== Veiculos disponiveis =================\n");
+        System.out.print("\n==================== Veiculos =================\n");
         for (int i = 0; i < frota.size(); i++) {
             Veiculo v = frota.get(i);
             System.out.printf("\n[%d] - Modelo: %s | Preço: %.2f", i, v.getModelo(), v.calcularDiaria());
@@ -24,7 +24,6 @@ public class Locadora {
     }
 
     public void listarDisponiveis(){
-        System.out.println("\n========== Carros disponiveis ============");
         for (int i = 0; i < frota.size(); i++) {
             Veiculo v = frota.get(i);
             if (v.getStatus()){
@@ -34,11 +33,33 @@ public class Locadora {
         }
     }
 
-    public void listarIndisponiveis(){
-        System.out.println("\n========== Carros indisponiveis ============");
+    public void listarMotos(){
         for (int i = 0; i < frota.size(); i++) {
             Veiculo v = frota.get(i);
-            if (!v.getStatus()){
+            if(v instanceof Moto){
+                System.out.println(v.exibirDados());
+            }
+        }
+    }
+
+    public void listarCarros(){
+        for (int i = 0; i < frota.size(); i++){
+            Veiculo v = frota.get(i);
+            if(v instanceof Carro){
+                System.out.println(v.exibirDados());
+            }
+            {
+
+            }
+        }
+    }
+
+
+    public void listarIndisponiveis(){
+        System.out.println("\n========== Veiculos indisponiveis ============");
+        for (int i = 0; i < frota.size(); i++) {
+            Veiculo v = frota.get(i);
+            if (v.getStatus()){
                 System.out.println(v.exibirDados());
             }
 
