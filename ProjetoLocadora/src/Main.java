@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Carro cd = new Carro("Honda", "Fit", 2004,"jad-0988", 1485, 4);
+        Carro cd = new Carro("Honda", "Fit", 2004, "jad-0988", 1485, 4);
         Carro c1 = new Carro("Toyota", "Corolla", 2018, "ABC-1234", 1798, 4);
         Carro c2 = new Carro("Ford", "Ka", 2016, "DEF-5678", 999, 4);
         Carro c3 = new Carro("Chevrolet", "Onix", 2020, "GHI-9012", 1390, 4);
@@ -27,5 +28,24 @@ public class Main {
 
         System.out.println(locadora.getVeiculo(2));
 
+
+        System.out.println(locadora.qtdcarros());
+
+        locadora.listarVeiculos();
+        Scanner sc = new Scanner(System.in);
+        System.out.println();
+        System.out.println("Digite o numero do veiculo: ");
+        int idVeiculo = sc.nextInt() - 1;
+        if (idVeiculo < locadora.qtdcarros()) {
+            System.out.println("Quantidade de dias: ");
+            int qtdDias = sc.nextInt();
+            locadora.aluguelVeiculo(qtdDias, idVeiculo);
+        } else {
+            System.out.println("Veiculo não existe.");
+        }
+        sc.close();
+
+
     }
+
 }
